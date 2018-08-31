@@ -34,17 +34,17 @@ In a linux terminal download the package with git by typing:
 	
 Create folder for turbulence model (if the folders already exist skip this part)
 
-	mkdir $WM_PROJECT_USER_DIR/src $WM_PROJECT_USER_DIR/src $WM_PROJECT_USER_DIR/src/turbulence $WM_PROJECT_USER_DIR/src/turbulence/incompressible
+	mkdir $WM_PROJECT_USER_DIR $WM_PROJECT_USER_DIR/src $WM_PROJECT_USER_DIR/src/TurbulenceModels $WM_PROJECT_USER_DIR/src/TurbulenceModels/turbulenceModels
 
 Move the folder to the user source code
 
-	mv stabRAS_OF50 $WM_PROJECT_USER_DIR/src/turbulence/incompressible/
+	mv stabRAS_OF50 $WM_PROJECT_USER_DIR/src/TurbulenceModels/turbulenceModels/
 	
 Go to the directory and compile the turbulence models
 
-	cd $WM_PROJECT_USER_DIR/src/turbulence/incompressible/stabRAS_OF50
+	cd $WM_PROJECT_USER_DIR/src/TurbulenceModels/turbulenceModels/stabRAS_OF50
 	
-	wmake libso
+	wmake libso	
 	
 Move the tutorials to the desired folder e.g FOAM_RUN
 
