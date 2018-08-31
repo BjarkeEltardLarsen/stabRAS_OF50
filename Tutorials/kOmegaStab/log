@@ -1,0 +1,78 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  5.0                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : 5.0
+Exec   : interFoam
+Date   : Aug 31 2018
+Time   : 11:00:52
+Host   : "n-62-27-20"
+PID    : 101152
+I/O    : uncollated
+Case   : /zhome/86/4/51673/OpenFOAM/bjelt-5.0/src/TurbulenceModels/turbulenceModels/RANS_stableOF50/Tutorials/kOmegaStab
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 20
+
+// using new solver syntax:
+UFinal
+{
+    solver          PBiCG;
+    preconditioner  DILU;
+    tolerance       1e-06;
+    relTol          0;
+}
+
+
+PIMPLE: Operating solver in PISO mode
+
+Reading field p_rgh
+
+Reading field U
+
+Reading/calculating face flux field phi
+
+Reading transportProperties
+
+Selecting incompressible transport model Newtonian
+Selecting incompressible transport model Newtonian
+Selecting turbulence model type RAS
+Selecting RAS turbulence model kOmegaStab
+kOmegaStabCoeffs
+{
+    lambda2         0.05;
+    betaStar        0.09;
+    beta            0.072;
+    gamma           0.52;
+    alphaK          0.5;
+    alphaOmega      0.5;
+    alphaBS         1.36;
+}
+
+
+Reading g
+
+Reading hRef
+Calculating field g.h
+
+No MRF models present
+
+No finite volume options present
+
+DICPCG:  Solving for pcorr, Initial residual = 1, Final residual = 9.7772e-11, No Iterations 269
+time step continuity errors : sum local = 2.27083e-18, global = 5.18677e-20, cumulative = 5.18677e-20
+Courant Number mean: 0.0158906 max: 0.0496292
+
+Starting time loop
+
+End
+
